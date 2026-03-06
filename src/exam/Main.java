@@ -28,7 +28,7 @@ public class Main {
         p1.displayInfo();
         System.out.println("Nhap so luong muon dat hang: ");
         double total = p1.placeOrder(sc.nextInt());
-        System.out.println("Tong tien la "+total);
+        if (total != 0)System.out.println("Tong tien la "+total);
 
 
 
