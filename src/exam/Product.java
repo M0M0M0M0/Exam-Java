@@ -82,13 +82,15 @@ public class Product {
     public boolean checkAvailability(Integer checkAmount){
         return checkAmount <= this.getQty();
     }
-    public double placeOrder(int orderedQty) throws Exception {
+    public double placeOrder(int orderedQty){
         if(!checkAvailability(orderedQty)){
-            throw new Exception("Quantity not enough");
+            System.out.println("Quantity not enough");
+            return 0;
         } else if (orderedQty<0) {
-            throw new Exception("Quantity can not be negative");
+            System.out.println("Quantity can not be negativeaa");
+            return 0;
         }
-        this.setQty(this.getId()-orderedQty);
+        this.setQty(this.getQty()-orderedQty);
         return getPrice()*orderedQty;
     }
 

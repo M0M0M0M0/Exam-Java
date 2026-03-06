@@ -4,29 +4,34 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int id;
-        String name;
-        String thumbnail;
-        double price;
-        int qty;
-        String description;
 
+        Product p1 = new Product();
         Scanner sc = new Scanner(System.in);
         System.out.println("Vui long nhap lan luot thong tin cua san pham.");
         System.out.println("ID:");
-        id = sc.nextInt();
+        p1.setId(sc.nextInt());
+        sc.nextLine();
         System.out.println("Name:");
-        name = sc.nextLine();
-        System.out.println("thumbnail");
-        thumbnail = sc.nextLine();
+        p1.setName(sc.nextLine());
+        System.out.println("Thumbnail:");
+        p1.setThumbnail(sc.nextLine());
         System.out.println("Price:");
-        price = sc.nextDouble();
+        p1.setPrice(sc.nextDouble());
+        sc.nextLine();
         System.out.println("Quantity:");
-        qty = sc.nextInt();
+        p1.setQty(sc.nextInt());
+        sc.nextLine();
         System.out.println("Description");
-        description = sc.nextLine();
+        p1.setDescription(sc.nextLine());
 
-        Product p1 = new Product(id,name,thumbnail,price,qty,description);
+
+        p1.displayInfo();
+        System.out.println("Nhap so luong muon dat hang: ");
+        double total = p1.placeOrder(sc.nextInt());
+        System.out.println("Tong tien la "+total);
+
+
+
 
 
     }
